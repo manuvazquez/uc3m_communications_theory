@@ -1,0 +1,13 @@
+name: ct
+channels:
+  - defaults
+dependencies:
+  - ipywidgets
+  - numpy
+  - scipy
+  - ipdb
+  - python=3
+  - matplotlib
+  - jupyterlab
+prefix: /home/manu/anaconda3/envs/ct
+
