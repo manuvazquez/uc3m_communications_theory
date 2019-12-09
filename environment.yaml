@@ -1,12 +1,12 @@
 name: ct
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - ipywidgets
   - numpy
   - scipy
   - ipdb
-  - python=3
   - matplotlib
   - jupyterlab
 
