@@ -2,12 +2,9 @@ name: ct
 channels:
   - defaults
 dependencies:
-  - python==3
-  - ipdb
-  - jupyterlab
+  - python=3
   - ipywidgets
   - numpy
   - matplotlib
   - scipy
-  - pyyaml
   - voila
