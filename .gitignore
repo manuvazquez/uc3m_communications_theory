@@ -1,2 +1,4 @@
 changelog
 .ipynb_checkpoints
+.idea
+__pycache__

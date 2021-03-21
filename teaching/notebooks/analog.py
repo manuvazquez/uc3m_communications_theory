@@ -5,7 +5,7 @@ __all__ = ['normalize', 'upper_envelope', 'AmplitudeModulation']
 # Cell
 
 import pathlib
-from typing import List, Union
+from typing import List, Union, Tuple
 
 import numpy as np
 import scipy.signal
@@ -14,13 +14,19 @@ import matplotlib.pyplot as plt
 from ipywidgets import interact, interactive, fixed, interact_manual
 
 # Cell
+def normalize(signal: np.ndarray, return_normalization_constant: bool = False) -> np.ndarray:
 
-def normalize(signal: np.ndarray) -> np.ndarray:
+    normalization_constant = np.abs(signal).max()
 
-    return signal / np.abs(signal).max()
+    if return_normalization_constant:
+
+        return signal / normalization_constant, normalization_constant
+
+    else:
+
+        return signal / normalization_constant
 
 # Cell
-
 def upper_envelope(signal: np.ndarray) -> np.ndarray:
 
     return np.abs(scipy.signal.hilbert(signal))
@@ -49,17 +55,20 @@ class AmplitudeModulation:
         # the modulation index is adjusted by tweaking "Ac"
         self.Ac = self.Am / m
 
-    def modulate(self, time: np.ndarray, information_signal: np.ndarray):
+    def modulate(self, time: np.ndarray, information_signal: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
 
         # what multiplies the cosine in the modulated signal (=> what is extracted when there is *no* overmodulation)
         cosine_factor = self.Ac + self.Am * information_signal
 
         modulated_signal = cosine_factor * np.cos(self.carrier_freq * time)
 
-#         envelope = np.abs(scipy.signal.hilbert(modulated_signal))
         envelope = upper_envelope(modulated_signal)
 
         return modulated_signal, envelope, cosine_factor
+
+    def demodulate(self, modulated_signal: np.ndarray):
+
+        return (upper_envelope(modulated_signal) / self.Ac - 1.) / self.m
 
     def to_csv(self, time: np.ndarray, information_signal: np.ndarray, output_file: Union[str, pathlib.Path]) -> None:
 
@@ -72,7 +81,9 @@ class AmplitudeModulation:
         np.savetxt(output_file, data, delimiter='\t', header=header)
 
     # "mpl" stands for matplotlib
-    def mpl_plot_modulation(self, time: np.ndarray, information_signal: np.ndarray, show_envelop: bool = False, figure_size: tuple =(12, 8)):
+    def mpl_plot_modulation(
+        self, time: np.ndarray, information_signal: np.ndarray, show_envelop: bool = False,
+        figure_size: tuple =(12, 8)):
 
         modulated_signal, envelope, cosine_factor = self.modulate(time, information_signal)
 
