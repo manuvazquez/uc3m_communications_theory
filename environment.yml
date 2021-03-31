@@ -1,6 +1,7 @@
 name: ct
 channels:
   - defaults
+  - fastai
 dependencies:
   - python=3
   - ipywidgets
