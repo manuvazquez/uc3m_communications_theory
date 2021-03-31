@@ -42,7 +42,7 @@ def find_bandwidth(signal: np.ndarray, f_s: float, threshold_ratio: float = 1e3)
     return bw
 
 # Cell
-def passband_filter(signal: np.ndarray, f_s: float, band: list[float, float], order: int = 5) -> np.ndarray:
+def passband_filter(signal: np.ndarray, f_s: float, band: List[float], order: int = 5) -> np.ndarray:
 
     nyquist_f = f_s / 2
     b, a = scipy.signal.butter(order, np.array(band) / nyquist_f , btype='band')
