@@ -2,6 +2,7 @@ name: ct
 channels:
   - defaults
   - conda-forge
+  - fastai
 dependencies:
   - python=3
   - ipywidgets
@@ -11,3 +12,4 @@ dependencies:
   - voila
   - librosa
   - ipympl
+  - fastcore
