@@ -9,3 +9,4 @@ dependencies:
   - scipy
   - voila
   - librosa
+  - fastcore
