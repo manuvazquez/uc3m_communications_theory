@@ -13,3 +13,4 @@ dependencies:
   - librosa
   - ipympl
   - fastcore
+  - jupyter-panel-proxy
