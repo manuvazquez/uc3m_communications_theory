@@ -9,7 +9,7 @@ dependencies:
   - numpy
   - matplotlib
   - scipy
-  - voila
+  - voila=0.2.7
   - librosa
   - ipympl
   - fastcore
