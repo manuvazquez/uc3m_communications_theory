@@ -25,3 +25,19 @@ def gamma_samples(n: int, a: float = 1.99) -> np.ndarray:
 def exponential_samples(n: int) -> np.ndarray:
 
 	return scipy.stats.expon().rvs(n)
+
+
+# very slow
+def cauchy_samples(n: int) -> np.ndarray:
+
+	return scipy.stats.cauchy().rvs(n)
+
+
+def chi2_samples(n: int, df: int = 55) -> np.ndarray:
+
+	return scipy.stats.chi2(df).rvs(n)
+
+
+def wald_samples(n: int) -> np.ndarray:
+
+	return scipy.stats.wald().rvs(n)
