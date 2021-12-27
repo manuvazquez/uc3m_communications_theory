@@ -14,3 +14,4 @@ dependencies:
   - ipympl
   - fastcore
   - bokeh
+  - jupyter_bokeh
