@@ -16,3 +16,4 @@ dependencies:
   - bokeh
   - jupyter_bokeh
   - plotly
+  - pandas
