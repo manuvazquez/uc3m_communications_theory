@@ -15,3 +15,4 @@ dependencies:
   - fastcore
   - bokeh
   - jupyter_bokeh
+  - plotly
