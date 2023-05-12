@@ -10,7 +10,7 @@ from typing import List, Union, Tuple
 import numpy as np
 import scipy.fft
 import scipy.signal
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import fastcore.foundation
 
 from ipywidgets import interact, interactive, fixed, interact_manual
@@ -115,19 +115,19 @@ class AmplitudeModulation:
 
         np.savetxt(output_file, data, delimiter='\t', header=header)
 
-    # "mpl" stands for matplotlib
-    def mpl_plot_modulation(
-        self, time: np.ndarray, information_signal: np.ndarray, show_envelop: bool = False,
-        figure_size: tuple =(12, 8)):
+#     # "mpl" stands for matplotlib
+#     def mpl_plot_modulation(
+#         self, time: np.ndarray, information_signal: np.ndarray, show_envelop: bool = False,
+#         figure_size: tuple =(12, 8)):
 
-        modulated_signal, envelope, cosine_factor = self.modulate(time, information_signal)
+#         modulated_signal, envelope, cosine_factor = self.modulate(time, information_signal)
 
-        fig, ax = plt.subplots(1, 1, figsize=figure_size)
-        ax.plot(modulated_signal, label='modulated signal', linestyle='dashed', color='gray')
-        ax.plot(information_signal, label='information (modulating) signal')
-        if show_envelop:
-            ax.plot(envelope, label='envelope')
-        ax.legend()
+#         fig, ax = plt.subplots(1, 1, figsize=figure_size)
+#         ax.plot(modulated_signal, label='modulated signal', linestyle='dashed', color='gray')
+#         ax.plot(information_signal, label='information (modulating) signal')
+#         if show_envelop:
+#             ax.plot(envelope, label='envelope')
+#         ax.legend()
 
 # Cell
 class FrequencyModulation:
