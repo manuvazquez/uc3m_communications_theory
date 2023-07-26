@@ -5,12 +5,15 @@ channels:
   - fastai
 dependencies:
   - python=3
-  - ipympl
   - ipywidgets
   - numpy
+  - matplotlib
   - scipy
   - voila
   - librosa
+  - ipympl
   - fastcore
+  - bokeh
+  - jupyter_bokeh
   - plotly
   - pandas
