@@ -17,6 +17,7 @@ LIBRARIES=(
     ipympl
     plotly
     pandas
+    ipykernel
 )
 
 CHANNELS=(
