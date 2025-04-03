@@ -1,0 +1,31 @@
+[project]
+name = "communications-theory"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastcore>=1.8.0",
+    "ipywidgets>=8.1.5",
+    "librosa>=0.11.0",
+    "matplotlib>=3.10.1",
+    "pandas>=2.2.3",
+    "plotly>=6.0.1",
+    "scipy>=1.15.2",
+    "standard-aifc>=3.13.0",
+    "voila>=0.5.8",
+]
+
+[tool.setuptools]
+include-package-data = true
+package-dir = {"" = "."}
+packages = ["communications_theory"]
+
+[tool.setuptools.package-data]
+communications_theory = ["data/*"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "jupyterlab>=4.3.6",
+]

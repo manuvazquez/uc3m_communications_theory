@@ -7,13 +7,10 @@ dependencies:
   - python=3
   - ipywidgets
   - numpy
-  - matplotlib
   - scipy
   - voila
   - librosa
-  - ipympl
+  - standard-aifc
   - fastcore
-  - bokeh
-  - jupyter_bokeh
   - plotly
   - pandas

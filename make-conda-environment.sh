@@ -12,7 +12,7 @@ LIBRARIES=(
     matplotlib
     scipy
     voila
-    librosa
+    librosa standard-aifc
     fastcore
     ipympl
     plotly
