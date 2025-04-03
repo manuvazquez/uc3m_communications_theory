@@ -5,15 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "fastcore>=1.8.0",
-    "ipywidgets>=8.1.5",
-    "librosa>=0.11.0",
-    "matplotlib>=3.10.1",
-    "pandas>=2.2.3",
-    "plotly>=6.0.1",
-    "scipy>=1.15.2",
-    "standard-aifc>=3.13.0",
-    "voila>=0.5.8",
+    "numpy",
+    "ipywidgets",
+    "librosa",
+    "pandas",
+    "plotly",
+    "standard-aifc",
 ]
 
 [tool.setuptools]
