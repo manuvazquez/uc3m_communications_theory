@@ -2,16 +2,16 @@ name: ct
 channels:
   - defaults
   - conda-forge
-  - fastai
 dependencies:
-  - python=3
-  - ipywidgets
+  - python=3.9             # pin to a specific minor version
+  - nodejs                 # needed to build ipywidgets/Voila front-end
+  - ipywidgets=7.*         # widget framework
+  - voila=0.4.*            # Voilà itself
+  - plotly=5.*             # for FigureWidget
   - numpy
   - scipy
-  - voila
   - librosa
+  - pandas
   - standard-aifc
   - fastcore
-  - plotly
-  - pandas
-  - nodejs
+  - anywidget
