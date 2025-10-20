@@ -15,3 +15,5 @@ dependencies:
   - fastcore
   - anywidget
   - ipympl
+  - pip:
+    - jupyterlab-mathjax3
