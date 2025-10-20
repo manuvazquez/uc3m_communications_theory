@@ -14,3 +14,4 @@ dependencies:
   - standard-aifc
   - fastcore
   - anywidget
+  - ipympl

@@ -2,3 +2,8 @@ changelog
 .ipynb_checkpoints
 .idea
 __pycache__
+
+uv.lock
+.python-version
+build
+communications_theory.egg-info
